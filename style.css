@@ -1,0 +1,290 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* CARD STYLES */
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.card h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 10px;
+}
+
+/* FORM CARDS CONTAINER - 50/50 LAYOUT */
+.form-card {
+    width: calc(50% - 12.5px);
+    display: inline-block;
+    vertical-align: top;
+}
+
+.form-card:first-of-type {
+    margin-right: 25px;
+}
+
+.container > h1 + .form-card {
+    display: inline-block;
+}
+
+.container {
+    text-align: center;
+}
+
+.card {
+    text-align: left;
+}
+
+/* FORM STYLES */
+.form-card form {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.form-card input,
+.form-card select {
+    flex: 1;
+    min-width: 150px;
+    padding: 12px 15px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-card input:focus,
+.form-card select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-card button {
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form-card button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* SUMMARY STYLES */
+.summary-content {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.summary-content p {
+    font-size: 1.3rem;
+    padding: 15px 25px;
+    border-radius: 8px;
+    background: #f9fafb;
+}
+
+.income-text {
+    color: #10b981 !important;
+    font-weight: 600;
+}
+
+.expense-text {
+    color: #ef4444 !important;
+    font-weight: 600;
+}
+
+.balance-text {
+    color: #333 !important;
+    font-size: 1.5rem !important;
+}
+
+/* ANALYTICS - 2x2 GRID */
+.analytics-card {
+    padding: 30px;
+}
+
+.chart-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.chart-box {
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 20px;
+    border: 2px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.chart-box:hover {
+    border-color: #667eea;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+}
+
+.chart-box h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+}
+
+/* TRANSACTIONS STYLES */
+.transactions-list {
+    list-style: none;
+}
+
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #f9fafb;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border-left: 4px solid #667eea;
+    transition: all 0.3s ease;
+}
+
+.transaction-item:hover {
+    background: #f3f4f6;
+    transform: translateX(5px);
+}
+
+.transaction-amount {
+    font-size: 1.1rem;
+    font-weight: 600;
+    flex: 2;
+}
+
+.transaction-type {
+    flex: 1;
+    text-align: center;
+    padding: 5px 15px;
+    background: #e5e7eb;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    text-transform: capitalize;
+}
+
+.delete-btn {
+    padding: 8px 20px;
+    background: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+    background: #dc2626;
+    transform: scale(1.05);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+    .chart-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .chart-container {
+        height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .form-card {
+        width: 100%;
+        display: block;
+    }
+
+    .form-card:nth-of-type(2) {
+        margin-left: 0;
+    }
+
+    .form-card form {
+        flex-direction: column;
+    }
+
+    .form-card input,
+    .form-card select,
+    .form-card button {
+        width: 100%;
+    }
+
+    .summary-content {
+        flex-direction: column;
+    }
+
+    .transaction-item {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .transaction-type {
+        text-align: left;
+    }
+}
